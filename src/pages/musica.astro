@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Música | Nementia"
+  description="Discografía y lanzamientos oficiales de Nementia."
+>
+
+  <!-- ======================================================
+       PÁGINA MÚSICA
+  ====================================================== -->
+
+  <main
+    class="relative
+           z-[1]
+           min-h-screen
+           bg-black
+           pt-20"
+  >
+
+    <!-- ====================================================
+         ENCABEZADO
+    ===================================================== -->
+
+    <section
+      class="pt-24
+             pb-16"
+    >
+
+      <div class="section-container">
+
+        <p
+          class="font-heading
+                 text-red-800
+                 text-xs
+                 tracking-[0.4em]
+                 uppercase
+                 mb-5"
+        >
+          Discografía
+        </p>
+
+        <h1
+          class="font-display
+                 text-white
+                 text-6xl
+                 md:text-7xl
+                 uppercase"
+        >
+          Música
+        </h1>
+
+        <div
+          class="w-12
+                 h-px
+                 bg-red-800
+                 mt-7"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ====================================================
+         DISCOGRAFÍA
+    ===================================================== -->
+
+    <section
+      class="pb-24"
+    >
+
+      <div class="section-container">
+
+        <div
+         class="grid
+         grid-cols-1
+         sm:grid-cols-2
+         lg:grid-cols-3
+         gap-8
+         lg:gap-10
+         max-w-6xl
+         mx-auto"
+        >
+
+          <!-- ==============================================
+               VITA EST IN MORTE
+          =============================================== -->
+
+          <article>
+
+            <div
+              class="aspect-square
+                     overflow-hidden
+                     bg-zinc-900
+                     border
+                     border-white/10"
+            >
+
+              <img
+                src="/images/vita-est-in-morte-cover.jpg"
+                alt="Vita Est In Morte - Nementia"
+                class="w-full
+                       h-full
+                       object-cover"
+              />
+
+            </div>
+
+            <div class="pt-5">
+
+              <p
+                class="font-heading
+                       text-red-800
+                       text-[10px]
+                       tracking-[0.3em]
+                       uppercase"
+              >
+                LP · 2025
+              </p>
+
+              <h2
+                class="font-display
+                       text-white
+                       text-3xl
+                       mt-2"
+              >
+                Vita Est In Morte
+              </h2>
+
+            </div>
+
+          </article>
+
+
+          <!-- ==============================================
+               DRYAS
+          =============================================== -->
+
+          <article>
+
+            <div
+                class="aspect-square
+                    overflow-hidden
+                    bg-zinc-900
+                    border
+                    border-white/10"
+            >
+                <img
+                src="/images/dryas.jpg"
+                alt="Dryas - Nementia"
+                class="w-full
+                        h-full
+                        object-cover"
+                />
+            </div>
+
+            <div class="pt-5">
+
+                <p
+                class="font-heading
+                        text-gray-500
+                        text-[10px]
+                        tracking-[0.3em]
+                        uppercase"
+                >
+                EP · 2024
+                </p>
+
+                <h2
+                class="font-display
+                        text-white
+                        text-3xl
+                        mt-2"
+                >
+                Dryas
+                </h2>
+
+            </div>
+
+          </article>
+
+
+          <!-- ==============================================
+               NEMENTIA
+          =============================================== -->
+
+          <article>
+
+            <div
+                class="aspect-square
+                    overflow-hidden
+                    bg-zinc-900
+                    border
+                    border-white/10"
+            >
+                <img
+                src="/images/nementia-single.jpg"
+                alt="Nementia - Single"
+                class="w-full
+                        h-full
+                        object-cover"
+                />
+            </div>
+
+            <div class="pt-5">
+
+                <p
+                class="font-heading
+                        text-gray-500
+                        text-[10px]
+                        tracking-[0.3em]
+                        uppercase"
+                >
+                Single · 2023
+                </p>
+
+                <h2
+                class="font-display
+                        text-white
+                        text-3xl
+                        mt-2"
+                >
+                Nementia
+                </h2>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</BaseLayout>

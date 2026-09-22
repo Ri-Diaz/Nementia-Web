@@ -1,0 +1,169 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Música', href: '/musica' },
+  { label: 'Videos', href: '/videos' },
+  { label: 'Fotos', href: '/fotos' },
+  { label: 'Ilustraciones', href: '/ilustraciones' },
+  { label: 'Bio', href: '/bio' },
+  { label: 'Contacto', href: '/contacto' },
+];
+---
+
+<!-- ======================================================
+     HEADER PRINCIPAL
+====================================================== -->
+
+<header
+  class="fixed
+         top-0
+         left-0
+         z-50
+         w-full
+         border-b
+         border-white/10
+         bg-black/95
+         backdrop-blur-md"
+>
+
+  <div
+    class="section-container
+            flex
+            h-20
+            items-center
+            justify-between"
+    >
+
+    <!-- ==================================================
+        LOGO
+    =================================================== -->
+
+    <a
+        href="/"
+        class="block shrink-0"
+        aria-label="Nementia - Inicio"
+    >
+        <img
+        src="/images/nementia-logo.png"
+        alt="Nementia"
+        class="w-[150px]
+                md:w-[175px]
+                h-auto"
+        />
+    </a>
+
+
+    <!-- ==================================================
+        NAVEGACIÓN PRINCIPAL
+    =================================================== -->
+
+    <nav
+        class="hidden
+            lg:flex
+            items-center
+            gap-7
+            font-heading
+            text-[12px]
+            tracking-[0.18em]
+            uppercase"
+        aria-label="Navegación principal"
+    >
+
+        {
+        navItems.map((item) => {
+            const isActive =
+            item.href === '/'
+                ? currentPath === '/'
+                : currentPath.startsWith(item.href);
+
+            return (
+            <a
+                href={item.href}
+                class:list={[
+                'transition-colors duration-300',
+                isActive
+                    ? 'text-white'
+                    : 'text-gray-500 hover:text-white'
+                ]}
+            >
+                {item.label}
+            </a>
+            );
+        })
+        }
+
+    </nav>
+
+
+    <!-- ==================================================
+        REDES SOCIALES
+    =================================================== -->
+
+    <div
+        class="hidden
+            lg:flex
+            items-center
+            gap-5
+            text-gray-500
+            text-sm"
+    >
+
+        <!-- Spotify -->
+        <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Spotify"
+        class="hover:text-white
+                transition-colors
+                duration-300"
+        >
+        <i class="fa-brands fa-spotify"></i>
+        </a>
+
+        <!-- YouTube -->
+        <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="YouTube"
+        class="hover:text-white
+                transition-colors
+                duration-300"
+        >
+        <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        class="hover:text-white
+                transition-colors
+                duration-300"
+        >
+        <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <!-- Apple Music -->
+        <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Apple Music"
+        class="hover:text-white
+                transition-colors
+                duration-300"
+        >
+        <i class="fa-brands fa-apple"></i>
+        </a>
+
+    </div>
+
+</div>
+
+</header>

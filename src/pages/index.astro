@@ -1,17 +1,204 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Nementia | Official Website"
+  description="Sitio oficial de Nementia."
+>
+
+  <main>
+
+    <!-- ========================================= -->
+    <!-- HERO / LANZAMIENTO PRINCIPAL              -->
+    <!-- ========================================= -->
+
+    <section
+      id="hero"
+      class="relative
+             min-h-[100vh]
+             flex
+             items-center
+             overflow-hidden
+             bg-black"
+    >
+
+      <!-- ========================================= -->
+      <!-- IMAGEN DE FONDO                           -->
+      <!-- ========================================= -->
+
+      <div
+        class="absolute
+               inset-0
+               bg-cover
+               bg-[position:52%_42%]
+               md:bg-[position:58%_42%]
+               lg:bg-[position:60%_42%]
+               scale-[1.06]"
+        style="
+          background-image:
+          url('/images/vita-est-in-morte-hero.jpg');
+        "
+      ></div>
+
+
+      <!-- ========================================= -->
+      <!-- OVERLAYS                                  -->
+      <!-- ========================================= -->
+
+      <!-- Overlay general -->
+      <div
+        class="absolute
+               inset-0
+               bg-black/10"
+      ></div>
+
+      <!-- Gradiente oscuro desde la izquierda -->
+      <div
+        class="absolute
+               inset-0
+               bg-gradient-to-r
+               from-black
+               via-black/35
+               to-transparent"
+      ></div>
+
+      <!-- Gradiente inferior -->
+      <div
+        class="absolute
+               inset-0
+               bg-gradient-to-t
+               from-black/65
+               via-transparent
+               to-black/10"
+      ></div>
+
+
+      <!-- ========================================= -->
+      <!-- CONTENIDO PRINCIPAL DEL HERO              -->
+      <!-- ========================================= -->
+
+      <div
+        class="relative
+               z-10
+               w-full
+               max-w-7xl
+               mx-auto
+               px-6
+               md:px-12
+               lg:px-16
+               translate-y-40"
+      >
+
+        <div
+          class="max-w-3xl
+                 md:max-w-4xl"
+        >
+
+          <!-- Etiqueta -->
+          <p
+            class="font-heading
+                   text-[var(--accent-red)]
+                   text-[10px]
+                   md:text-xs
+                   tracking-[0.45em]
+                   uppercase
+                   mb-6"
+          >
+            Nuevo Álbum
+          </p>
+
+
+          <!-- Título -->
+          <h1
+            class="font-display
+                   text-white
+                   text-4xl
+                   md:text-5xl
+                   lg:text-6xl
+                   leading-[0.95]
+                   tracking-[0.015em]
+                   uppercase
+                   whitespace-normal
+                   md:whitespace-nowrap"
+          >
+            Vita Est In Morte
+          </h1>
+
+
+          <!-- Línea decorativa -->
+          <div
+            class="w-12
+                   h-px
+                   bg-red-800
+                   mt-8
+                   mb-7"
+          ></div>
+
+
+          <!-- Fecha -->
+          <p
+            class="font-heading
+                   text-gray-400
+                   text-[10px]
+                   tracking-[0.45em]
+                   uppercase"
+          >
+            30.08.2025
+          </p>
+
+
+          <!-- ========================================= -->
+          <!-- BOTONES                                   -->
+          <!-- ========================================= -->
+
+          <div
+            class="flex
+                   flex-wrap
+                   gap-4
+                   mt-8"
+          >
+
+            <!-- Escuchar -->
+            <a
+              href="/musica"
+              class="ghost-btn
+                     font-heading
+                     text-[10px]
+                     uppercase
+                     tracking-[0.25em]
+                     px-8
+                     py-4
+                     text-white"
+            >
+              Escuchar
+            </a>
+
+            <!-- Ver Videos -->
+            <a
+              href="/videos"
+              class="ghost-btn
+                     font-heading
+                     text-[10px]
+                     uppercase
+                     tracking-[0.25em]
+                     px-8
+                     py-4
+                     text-white"
+            >
+              Ver Videos
+            </a>
+
+          </div>
+          <!-- Fin Botones -->
+
+        </div>
+
+      </div>
+      <!-- Fin Contenido Principal -->
+
+    </section>
+
+  </main>
+
+</BaseLayout>
