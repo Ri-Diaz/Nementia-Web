@@ -30,19 +30,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- IMAGEN DE FONDO                           -->
       <!-- ========================================= -->
 
-      <div
+      <img
+        src="/images/vita-est-in-morte-hero.jpg"
+        alt=""
+        width="2400"
+        height="1586"
+        loading="eager"
+        fetchpriority="high"
+        aria-hidden="true"
         class="absolute
-               inset-0
-               bg-cover
-               bg-[position:52%_42%]
-               md:bg-[position:58%_42%]
-               lg:bg-[position:60%_42%]
-               scale-[1.06]"
-        style="
-          background-image:
-          url('/images/vita-est-in-morte-hero.jpg');
-        "
-      ></div>
+              inset-0
+              h-full
+              w-full
+              object-cover
+              object-[52%_42%]
+              md:object-[58%_42%]
+              lg:object-[60%_42%]
+              scale-[1.06]"
+      />
 
 
       <!-- ========================================= -->
