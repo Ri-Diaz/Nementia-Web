@@ -30,140 +30,458 @@ const navItems = [
 
   <div
     class="section-container
-            flex
-            h-20
-            items-center
-            justify-between"
-    >
+           flex
+           h-20
+           items-center
+           justify-between"
+  >
 
     <!-- ==================================================
-        LOGO
+         LOGO
     =================================================== -->
 
     <a
-        href="/"
-        class="block shrink-0"
-        aria-label="Nementia - Inicio"
+      href="/"
+      class="block shrink-0"
+      aria-label="Nementia - Inicio"
     >
-        <img
+      <img
         src="/images/nementia-logo.png"
         alt="Nementia"
-        class="w-[150px]
-                md:w-[175px]
-                h-auto"
-        />
+        class="w-[145px]
+               md:w-[160px]
+               lg:w-[175px]
+               h-auto"
+      />
     </a>
 
 
     <!-- ==================================================
-        NAVEGACIÓN PRINCIPAL
+         NAVEGACIÓN ESCRITORIO
     =================================================== -->
 
     <nav
-        class="hidden
-            lg:flex
-            items-center
-            gap-7
-            font-heading
-            text-[12px]
-            tracking-[0.18em]
-            uppercase"
-        aria-label="Navegación principal"
+      class="hidden
+             lg:flex
+             items-center
+             gap-7
+             font-heading
+             text-[12px]
+             tracking-[0.18em]
+             uppercase"
+      aria-label="Navegación principal"
     >
-
-        {
+      {
         navItems.map((item) => {
-            const isActive =
+          const isActive =
             item.href === '/'
-                ? currentPath === '/'
-                : currentPath.startsWith(item.href);
+              ? currentPath === '/'
+              : currentPath.startsWith(item.href);
 
-            return (
+          return (
             <a
-                href={item.href}
-                class:list={[
-                'transition-colors duration-300',
+              href={item.href}
+              aria-current={isActive ? 'page' : undefined}
+              class:list={[
+                'relative py-2 transition-colors duration-300',
                 isActive
-                    ? 'text-white'
-                    : 'text-gray-500 hover:text-white'
-                ]}
+                  ? 'text-white'
+                  : 'text-gray-400 hover:text-white'
+              ]}
             >
-                {item.label}
-            </a>
-            );
-        })
-        }
+              {item.label}
 
+              {
+                isActive && (
+                  <span
+                    class="absolute
+                          left-1/2
+                          -bottom-1
+                          h-px
+                          w-6
+                          -translate-x-1/2
+                          bg-red-600"
+                    aria-hidden="true"
+                  ></span>
+                )
+              }
+            </a>
+          );
+        })
+      }
     </nav>
 
 
     <!-- ==================================================
-        REDES SOCIALES
+         REDES SOCIALES ESCRITORIO
     =================================================== -->
 
     <div
-        class="hidden
-            lg:flex
-            items-center
-            gap-5
-            text-gray-500
-            text-sm"
+      class="hidden
+             lg:flex
+             items-center
+             gap-5
+             text-gray-500
+             text-sm"
     >
 
-        <!-- Spotify -->
-        <a
-        href="#"
+      <a
+        href="https://open.spotify.com/artist/013o3IJujXyd1L4cCUTi6p"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Spotify"
-        class="hover:text-white
-                transition-colors
-                duration-300"
-        >
+        class="hover:text-white transition-colors duration-300"
+      >
         <i class="fa-brands fa-spotify"></i>
-        </a>
+      </a>
 
-        <!-- YouTube -->
-        <a
-        href="#"
+      <a
+        href="https://www.youtube.com/@nementia_band"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="YouTube"
-        class="hover:text-white
-                transition-colors
-                duration-300"
-        >
+        class="hover:text-white transition-colors duration-300"
+      >
         <i class="fa-brands fa-youtube"></i>
-        </a>
+      </a>
 
-        <!-- Instagram -->
-        <a
-        href="#"
+      <a
+        href="https://www.instagram.com/nementia_band"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Instagram"
-        class="hover:text-white
-                transition-colors
-                duration-300"
-        >
+        class="hover:text-white transition-colors duration-300"
+      >
         <i class="fa-brands fa-instagram"></i>
-        </a>
+      </a>
 
-        <!-- Apple Music -->
-        <a
-        href="#"
+      <a
+        href="https://www.facebook.com/nementia.band"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        class="hover:text-white transition-colors duration-300"
+      >
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+      <a
+        href="https://music.apple.com/cl/artist/nementia/1712198198"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Apple Music"
-        class="hover:text-white
-                transition-colors
-                duration-300"
-        >
+        class="hover:text-white transition-colors duration-300"
+      >
         <i class="fa-brands fa-apple"></i>
-        </a>
+      </a>
 
     </div>
 
-</div>
+
+    <!-- ==================================================
+         BOTÓN MENÚ MÓVIL
+    =================================================== -->
+
+    <button
+      id="mobile-menu-button"
+      type="button"
+      class="lg:hidden
+             flex
+             items-center
+             justify-center
+             w-10
+             h-10
+             text-gray-300
+             hover:text-white
+             transition-colors
+             duration-300"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+
+      <!-- ICONO HAMBURGUESA -->
+      <svg
+        id="menu-open-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        class="w-7 h-7"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          d="M4 7h16M4 12h16M4 17h16"
+        />
+      </svg>
+
+      <!-- ICONO CERRAR -->
+      <svg
+        id="menu-close-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        class="hidden w-7 h-7"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          d="M6 6l12 12M18 6L6 18"
+        />
+      </svg>
+
+    </button>
+
+  </div>
+
+
+  <!-- ==================================================
+       MENÚ MÓVIL
+  =================================================== -->
+
+  <div
+    id="mobile-menu"
+    class="hidden
+           lg:hidden
+           absolute
+           top-20
+           left-0
+           w-full
+           max-h-[calc(100dvh-5rem)]
+           overflow-y-auto
+           overscroll-contain
+           bg-black/98
+           border-t
+           border-white/10
+           backdrop-blur-md"
+  >
+
+    <div
+      class="section-container
+             py-8
+             flex
+             flex-col
+             items-center"
+    >
+
+      <!-- NAVEGACIÓN -->
+      <nav
+        class="flex
+               flex-col
+               items-center
+               gap-5
+               font-heading
+               text-[13px]
+               tracking-[0.25em]
+               uppercase"
+        aria-label="Navegación móvil"
+      >
+        {
+          navItems.map((item) => {
+            const isActive =
+              item.href === '/'
+                ? currentPath === '/'
+                : currentPath.startsWith(item.href);
+
+            return (
+              <a
+                href={item.href}
+                data-mobile-link
+                aria-current={isActive ? 'page' : undefined}
+                class:list={[
+                  'relative py-2 transition-colors duration-300',
+                  isActive
+                    ? 'text-white'
+                    : 'text-gray-400 hover:text-white'
+                ]}
+              >
+                {item.label}
+
+                {
+                  isActive && (
+                    <span
+                      class="absolute
+                            left-1/2
+                            -bottom-0
+                            h-px
+                            w-6
+                            -translate-x-1/2
+                            bg-red-600"
+                      aria-hidden="true"
+                    ></span>
+                  )
+                }
+              </a>
+            );
+          })
+        }
+      </nav>
+
+
+      <!-- SEPARADOR -->
+      <div
+        class="w-10
+               h-px
+               bg-red-800
+               my-7"
+      ></div>
+
+
+      <!-- REDES SOCIALES -->
+      <div
+        class="flex
+               items-center
+               justify-center
+               gap-7
+               text-gray-500
+               text-lg"
+      >
+
+        <a
+          href="https://open.spotify.com/artist/013o3IJujXyd1L4cCUTi6p"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Spotify"
+          class="hover:text-white transition-colors duration-300"
+        >
+          <i class="fa-brands fa-spotify"></i>
+        </a>
+
+        <a
+          href="https://www.youtube.com/@nementia_band"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+          class="hover:text-white transition-colors duration-300"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a
+          href="https://www.instagram.com/nementia_band"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          class="hover:text-white transition-colors duration-300"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a
+          href="https://www.facebook.com/nementia.band"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          class="hover:text-white transition-colors duration-300"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a
+          href="https://music.apple.com/cl/artist/nementia/1712198198"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Apple Music"
+          class="hover:text-white transition-colors duration-300"
+        >
+          <i class="fa-brands fa-apple"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </header>
+
+
+<!-- ======================================================
+     JAVASCRIPT MENÚ MÓVIL
+====================================================== -->
+
+<script>
+  const menuButton =
+    document.querySelector<HTMLButtonElement>('#mobile-menu-button');
+
+  const mobileMenu =
+    document.querySelector<HTMLElement>('#mobile-menu');
+
+  const openIcon =
+    document.querySelector<HTMLElement>('#menu-open-icon');
+
+  const closeIcon =
+    document.querySelector<HTMLElement>('#menu-close-icon');
+
+  const mobileLinks =
+    document.querySelectorAll<HTMLElement>('[data-mobile-link]');
+
+
+  function openMenu() {
+    if (!menuButton || !mobileMenu || !openIcon || !closeIcon) return;
+
+    mobileMenu.classList.remove('hidden');
+
+    openIcon.classList.add('hidden');
+    closeIcon.classList.remove('hidden');
+
+    menuButton.setAttribute('aria-expanded', 'true');
+    menuButton.setAttribute('aria-label', 'Cerrar menú');
+
+    document.body.style.overflow = 'hidden';
+  }
+
+
+  function closeMenu() {
+    if (!menuButton || !mobileMenu || !openIcon || !closeIcon) return;
+
+    mobileMenu.classList.add('hidden');
+
+    openIcon.classList.remove('hidden');
+    closeIcon.classList.add('hidden');
+
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Abrir menú');
+
+    document.body.style.overflow = '';
+  }
+
+
+  menuButton?.addEventListener('click', () => {
+
+    const isOpen =
+      menuButton.getAttribute('aria-expanded') === 'true';
+
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+
+  });
+
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+
+  document.addEventListener('keydown', (event) => {
+
+    if (event.key === 'Escape') {
+      closeMenu();
+    }
+
+  });
+
+
+  window.addEventListener('resize', () => {
+
+    if (window.innerWidth >= 1024) {
+      closeMenu();
+    }
+
+  });
+</script>

@@ -1,34 +1,675 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+/* ======================================================
+   DATOS DE VIDEOS
+====================================================== */
+
+const officialVideos = [
+  {
+    title: 'Irreflejo',
+    type: 'Official Music Video',
+    year: '2025',
+    image: '/images/video-irreflejo.jpg',
+    href: 'https://www.youtube.com/watch?v=7YwSi0y5RF0&list=RD7YwSi0y5RF0&start_radio=1',
+  },
+  {
+    title: 'Erde',
+    type: 'Official Music Video',
+    year: '2026',
+    image: '/images/video-erde.jpg',
+    href: 'https://youtu.be/hedRMM4w1Hg',
+  },
+];
+
+const otherVideos = [
+  {
+    title: 'Snag',
+    type: 'Guitar Playthrough',
+    year: '2025',
+    image: '/images/video-snag-playthrough.jpg',
+    href: 'https://youtu.be/5cR2mNLGaZs',
+  },
+  {
+    title: 'Inerte',
+    type: 'Singthrough',
+    year: '2024',
+    image: '/images/video-inerte-singthrough.jpg',
+    href: 'https://youtu.be/4v4q_oDhiPk',
+  },
+  {
+    title: 'Dryas',
+    type: 'Visualizer',
+    year: '2024',
+    image: '/images/video-dryas.jpg',
+    href: 'https://youtu.be/zYInpH3A2f4',
+  },
+  {
+    title: 'Nementia',
+    type: 'Visualizer',
+    year: '2023',
+    image: '/images/video-nementia.jpg',
+    href: 'https://www.youtube.com/watch?v=9pbT37zcUR8&list=RD9pbT37zcUR8&start_radio=1',
+  },
+];
+
+const liveVideos = [
+  {
+    title: 'Live at Residuo Fest 2026',
+    type: 'Live',
+    year: '2026',
+    image: '/images/live-residuo-fest.jpg',
+    href: 'https://youtu.be/m4rqCJRB7BE',
+  },
+  {
+    title: 'Modern Metal 4 Live Set',
+    type: 'Live Set',
+    year: '2025',
+    image: '/images/live-modern-metal-4.jpg',
+    href: 'https://youtu.be/_RZNI3E0fIw',
+  },
+  {
+    title: 'Nementia - Live',
+    type: 'Live Session',
+    year: '2024',
+    image: '/images/live-nementia.jpg',
+    href: 'https://youtu.be/Fkji0aKha70',
+  },
+];
 ---
 
 <BaseLayout
-  title="Música | Nementia"
-  description="Discografía oficial de Nementia."
+  title="Videos | Nementia"
+  description="Videoclips, sesiones, visualizers y registros en vivo de Nementia."
 >
-  <main class="min-h-screen pt-32">
-    <section class="section-container py-20">
+
+    <main id="main-content" class="bg-black min-h-screen">
+
+  <!-- ======================================================
+       HERO / BANNER
+  ====================================================== -->
+
+  <section
+    class="relative
+           overflow-hidden
+           bg-black"
+  >
+
+    <!-- Imagen de fondo -->
+    <div class="absolute inset-0">
+
+      <img
+        src="/images/banner4.jpg"
+        alt="Nementia - Videos"
+        class="h-full
+               w-full
+               object-cover
+               object-center"
+      />
+
+      <!-- Overlay general -->
+      <div
+        class="absolute
+               inset-0
+               bg-black/55"
+      ></div>
+
+      <!-- Gradiente inferior -->
+      <div
+        class="absolute
+               inset-0
+               bg-gradient-to-b
+               from-black/20
+               via-black/40
+               to-black/90"
+      ></div>
+
+    </div>
+
+
+    <!-- Contenido -->
+    <div
+      class="section-container
+             relative
+             z-10
+             flex
+             min-h-[220px]
+             md:min-h-[340px]
+             items-center
+             justify-center
+             text-center"
+    >
+
+      <div class="translate-y-12">
+
+        <p
+          class="font-heading
+                 text-[11px]
+                 md:text-xs
+                 tracking-[0.4em]
+                 uppercase
+                 text-red-500"
+        >
+          Audiovisual
+        </p>
+
+        <h1
+          class="mt-4
+                 font-display
+                 text-5xl
+                 md:text-6xl
+                 lg:text-7xl
+                 uppercase
+                 text-white"
+        >
+          Videos
+        </h1>
+
+        <div
+          class="mx-auto
+                 mt-6
+                 h-px
+                 w-12
+                 bg-red-700"
+        ></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       VIDEOCLIPS OFICIALES
+  ====================================================== -->
+
+  <section
+    class="section-container
+           pt-0
+           pb-10
+           md:pt-0
+           md:pb-10"
+  >
+
+    <div class="mb-2">
 
       <p
         class="font-heading
-               text-[var(--accent-red)]
-               text-xs
-               tracking-[0.4em]
+               text-[11px]
+               tracking-[0.35em]
                uppercase
-               mb-4"
+               text-red-500"
       >
-        Nementia
+        Principal
       </p>
 
-      <h1
-        class="font-display
-               text-5xl
-               md:text-6xl
-               uppercase"
+      <h2
+        class="mt-3
+               font-display
+               text-4xl
+               md:text-5xl
+               uppercase
+               text-white"
       >
-        Música
-      </h1>
+        Videoclips oficiales
+      </h2>
 
-    </section>
+      <div
+        class="mt-5
+               h-px
+               w-12
+               bg-red-700"
+      ></div>
+
+    </div>
+
+
+    <div
+      class="grid
+             grid-cols-1
+             md:grid-cols-2
+             gap-8
+             md:gap-10"
+    >
+
+      {
+        officialVideos.map((video) => (
+          <a
+            href={video.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block"
+          >
+
+            <div
+              class="relative
+                     overflow-hidden
+                     border
+                     border-white/10
+                     bg-zinc-900"
+            >
+
+              <img
+                src={video.image}
+                alt=""
+                loading="lazy"
+                class="aspect-video
+                       w-full
+                       object-cover
+                       transition-transform
+                       duration-500
+                       group-hover:scale-[1.02]"
+              />
+
+              <!-- Overlay hover -->
+              <div
+                class="absolute
+                       inset-0
+                       bg-black/0
+                       transition-colors
+                       duration-300
+                       group-hover:bg-black/20"
+              ></div>
+
+              <!-- Botón Play -->
+              <div
+                class="absolute
+                       inset-0
+                       flex
+                       items-center
+                       justify-center"
+              >
+                <div
+                  class="flex
+                         h-14
+                         w-14
+                         items-center
+                         justify-center
+                         border
+                         border-white/40
+                         bg-black/25
+                         text-white
+                         backdrop-blur-sm
+                         transition
+                         duration-300
+                         group-hover:border-white
+                         group-hover:bg-black/50"
+                >
+                  <i class="fa-solid fa-play text-sm"></i>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="pt-4">
+
+              <p
+                class="font-heading
+                       text-[10px]
+                       uppercase
+                       tracking-[0.28em]
+                       text-red-500"
+              >
+                {video.type} · {video.year}
+              </p>
+
+              <h3
+                class="mt-2
+                       font-heading
+                       text-2xl
+                       md:text-3xl
+                       uppercase
+                       tracking-[0.08em]
+                       text-white"
+              >
+                {video.title}
+              </h3>
+
+            </div>
+
+          </a>
+        ))
+      }
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       OTROS VIDEOS
+  ====================================================== -->
+
+  <section
+    class="section-container
+           py-10
+           md:py-12"
+  >
+
+    <div class="mb-10">
+
+      <p
+        class="font-heading
+               text-[11px]
+               tracking-[0.35em]
+               uppercase
+               text-red-500"
+      >
+        Archivo audiovisual
+      </p>
+
+      <h2
+        class="mt-3
+               font-display
+               text-4xl
+               md:text-5xl
+               uppercase
+               text-white"
+      >
+        Otros videos
+      </h2>
+
+      <div
+        class="mt-5
+               h-px
+               w-12
+               bg-red-700"
+      ></div>
+
+    </div>
+
+
+    <div
+      class="grid
+             grid-cols-1
+             sm:grid-cols-2
+             lg:grid-cols-3
+             gap-8"
+    >
+
+      {
+        otherVideos.map((video) => (
+          <a
+            href={video.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block"
+          >
+
+            <div
+              class="relative
+                     overflow-hidden
+                     border
+                     border-white/10
+                     bg-zinc-900"
+            >
+
+              <img
+                src={video.image}
+                alt=""
+                loading="lazy"
+                class="aspect-video
+                       w-full
+                       object-cover
+                       transition-transform
+                       duration-500
+                       group-hover:scale-[1.02]"
+              />
+
+              <div
+                class="absolute
+                       inset-0
+                       bg-black/0
+                       transition-colors
+                       duration-300
+                       group-hover:bg-black/20"
+              ></div>
+
+              <div
+                class="absolute
+                       inset-0
+                       flex
+                       items-center
+                       justify-center"
+              >
+                <div
+                  class="flex
+                         h-12
+                         w-12
+                         items-center
+                         justify-center
+                         border
+                         border-white/30
+                         bg-black/25
+                         text-white
+                         backdrop-blur-sm
+                         transition
+                         duration-300
+                         group-hover:border-white"
+                >
+                  <i class="fa-solid fa-play text-xs"></i>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="pt-4">
+
+              <p
+                class="font-heading
+                       text-[10px]
+                       uppercase
+                       tracking-[0.28em]
+                       text-red-500"
+              >
+                {video.type} · {video.year}
+              </p>
+
+              <h3
+                class="mt-2
+                       font-heading
+                       text-2xl
+                       uppercase
+                       tracking-[0.08em]
+                       text-white"
+              >
+                {video.title}
+              </h3>
+
+            </div>
+
+          </a>
+        ))
+      }
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       EN VIVO
+  ====================================================== -->
+
+  <section
+    class="section-container
+           pt-10
+           pb-20
+           md:pt-12
+           md:pb-24"
+  >
+
+    <div class="mb-10">
+
+      <p
+        class="font-heading
+               text-[11px]
+               tracking-[0.35em]
+               uppercase
+               text-red-500"
+      >
+        Registros
+      </p>
+
+      <h2
+        class="mt-3
+               font-display
+               text-4xl
+               md:text-5xl
+               uppercase
+               text-white"
+      >
+        En vivo
+      </h2>
+
+      <div
+        class="mt-5
+               h-px
+               w-12
+               bg-red-700"
+      ></div>
+
+    </div>
+
+
+    <div
+      class="grid
+             grid-cols-1
+             md:grid-cols-3
+             gap-8"
+    >
+
+      {
+        liveVideos.map((video) => (
+          <a
+            href={video.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group block"
+          >
+
+            <div
+              class="relative
+                     overflow-hidden
+                     border
+                     border-white/10
+                     bg-zinc-900"
+            >
+
+              <img
+                src={video.image}
+                alt=""
+                loading="lazy"
+                class="aspect-video
+                       w-full
+                       object-cover
+                       transition-transform
+                       duration-500
+                       group-hover:scale-[1.02]"
+              />
+
+              <div
+                class="absolute
+                       inset-0
+                       bg-black/0
+                       transition-colors
+                       duration-300
+                       group-hover:bg-black/20"
+              ></div>
+
+              <div
+                class="absolute
+                       inset-0
+                       flex
+                       items-center
+                       justify-center"
+              >
+                <div
+                  class="flex
+                         h-12
+                         w-12
+                         items-center
+                         justify-center
+                         border
+                         border-white/30
+                         bg-black/25
+                         text-white
+                         backdrop-blur-sm
+                         transition
+                         duration-300
+                         group-hover:border-white"
+                >
+                  <i class="fa-solid fa-play text-xs"></i>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="pt-4">
+
+              <p
+                class="font-heading
+                       text-[10px]
+                       uppercase
+                       tracking-[0.28em]
+                       text-red-500"
+              >
+                {video.type} · {video.year}
+              </p>
+
+              <h3
+                class="mt-2
+                       font-heading
+                       text-2xl
+                       uppercase
+                       tracking-[0.08em]
+                       text-white"
+              >
+                {video.title}
+              </h3>
+
+            </div>
+
+          </a>
+        ))
+      }
+
+    </div>
+
+  </section>
+
   </main>
+
+      <!-- ======================================================
+         PIE INTERNO DE LA SECCIÓN
+    ======================================================= -->
+
+    <footer
+      class="border-t
+             border-white/10
+             py-14"
+    >
+      <div
+        class="section-container
+               text-center"
+      >
+        <p
+          class="font-heading
+                 text-gray-400
+                 text-[10px]
+                 uppercase
+                 tracking-[0.3em]"
+        >
+          Nementia · Valparaíso, Chile
+        </p>
+      </div>
+    </footer>
+
 </BaseLayout>

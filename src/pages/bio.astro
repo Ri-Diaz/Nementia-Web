@@ -1,34 +1,466 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const integrantes = [
+  {
+    nombre: 'Francisco Díaz',
+    rol: 'Voz',
+  },
+  {
+    nombre: 'Pedro Fariña',
+    rol: 'Guitarra / Voz',
+  },
+  {
+    nombre: 'Richard Díaz',
+    rol: 'Guitarra',
+  },
+  {
+    nombre: 'Majo Calderón',
+    rol: 'Bajo / Coros',
+  },
+  {
+    nombre: 'Gerardo Gallardo',
+    rol: 'Batería',
+  },
+];
 ---
 
 <BaseLayout
-  title="Música | Nementia"
-  description="Discografía oficial de Nementia."
+  title="Bio | Nementia"
+  description="Biografía y formación de Nementia, banda de metal progresivo de Valparaíso, Chile."
 >
-  <main class="min-h-screen pt-32">
-    <section class="section-container py-20">
 
-      <p
-        class="font-heading
-               text-[var(--accent-red)]
-               text-xs
-               tracking-[0.4em]
-               uppercase
-               mb-4"
-      >
-        Nementia
-      </p>
+  <main id="main-content" class="bg-black min-h-screen">
 
-      <h1
-        class="font-display
-               text-5xl
-               md:text-6xl
-               uppercase"
+    <!-- ======================================================
+         BANNER
+    ====================================================== -->
+
+    <section
+      class="relative
+             overflow-hidden
+             min-h-[280px]
+             md:min-h-[340px]
+             flex
+             items-center
+             justify-center
+             text-center"
+    >
+
+      <!-- Imagen -->
+      <div class="absolute inset-0">
+        <img
+          src="/images/banner2.jpg"
+          alt=""
+          class="h-full
+                 w-full
+                 object-cover
+                 object-[center_23%]"
+        />
+
+        <!-- Overlay -->
+        <div
+          class="absolute
+                 inset-0
+                 bg-black/45"
+        ></div>
+
+        <!-- Gradiente inferior -->
+        <div
+          class="absolute
+                 inset-x-0
+                 bottom-0
+                 h-32
+                 bg-gradient-to-b
+                 from-transparent
+                 to-black"
+        ></div>
+      </div>
+
+      <!-- Título -->
+      <div
+        class="section-container
+               relative
+               z-10
+               translate-y-12"
       >
-        Música
-      </h1>
+
+        <p
+          class="font-heading
+                 text-[11px]
+                 md:text-xs
+                 tracking-[0.4em]
+                 uppercase
+                 text-red-500"
+        >
+          Nementia
+        </p>
+
+        <h1
+          class="mt-4
+                 font-display
+                 text-5xl
+                 md:text-6xl
+                 lg:text-7xl
+                 uppercase
+                 text-white"
+        >
+          Bio
+        </h1>
+
+        <div
+          class="mx-auto
+                 mt-6
+                 h-px
+                 w-12
+                 bg-red-700"
+        ></div>
+
+      </div>
 
     </section>
+
+
+    <!-- ======================================================
+         BIO PRINCIPAL
+    ====================================================== -->
+
+    <section
+      class="section-container
+             py-16
+             md:py-20"
+    >
+
+      <div
+        class="grid
+               grid-cols-1
+               lg:grid-cols-2
+               gap-12
+               lg:gap-16
+               items-center
+               lg:-translate-y-12"
+      >
+
+        <!-- FOTO -->
+
+        <div
+          class="relative
+                w-full
+                max-w-[570px]
+                mx-auto
+                lg:mx-0
+                overflow-hidden"
+        >
+          <img
+            src="/images/bio-principal.jpg"
+            alt="Nementia"
+            width="1333"
+            height="2000"
+            class="w-full
+                  h-auto
+                  object-cover"
+          />
+
+          <div
+            class="absolute
+                  inset-0
+                  bg-black/20
+                  pointer-events-none"
+          ></div>
+
+        </div>
+
+
+        <!-- TEXTO -->
+
+        <div>
+
+          <p
+            class="font-heading
+                   text-[11px]
+                   md:text-xs
+                   tracking-[0.4em]
+                   uppercase
+                   text-red-500"
+          >
+            Valparaíso · Chile
+          </p>
+
+          <h2
+            class="mt-4
+                   font-display
+                   text-4xl
+                   md:text-5xl
+                   lg:text-6xl
+                   uppercase
+                   text-white"
+          >
+            Nementia
+          </h2>
+
+          <div
+            class="mt-6
+                   h-px
+                   w-12
+                   bg-white/25"
+          ></div>
+
+          <div
+            class="mt-8
+                   space-y-6
+                   text-[15px]
+                   md:text-base
+                   leading-8
+                   text-gray-400"
+          >
+
+            <p>
+              Nementia es una banda originaria de Valparaíso, Chile,
+              formada en 2020.
+            </p>
+
+            <p>
+              Su propuesta explora distintas vertientes del metal progresivo,
+              combinando intensidad, atmósferas oscuras y una identidad
+              conceptual construida a partir de contrastes entre peso,
+              textura y melodía.
+            </p>
+
+            <p>
+              Desde sus primeros trabajos, la banda ha desarrollado una
+              propuesta audiovisual en la que música, fotografía,
+              ilustración y narrativa visual forman parte de una misma
+              identidad artística.
+            </p>
+
+            <p>
+              Tras el lanzamiento de su material inicial, Nementia publicó
+              el EP <em>Dryas</em> en 2024 y posteriormente su primer
+              larga duración, <em>Vita Est In Morte</em>, en 2025.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FOTO INTERMEDIA
+    ====================================================== -->
+
+    <section
+      class="section-container
+             pb-8
+             md:pb-10"
+    >
+
+      <div
+        class="relative
+               overflow-hidden"
+      >
+
+        <img
+          src="/images/bio-sesion-01.jpg"
+          alt="Nementia en sesión fotográfica"
+          width="1333"
+          height="2000"
+          loading="lazy"
+          class="w-full
+                 max-h-[720px]
+                 object-cover
+                 object-center"
+        />
+
+        <div
+          class="absolute
+                 inset-0
+                 bg-black/10"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FORMACIÓN
+    ====================================================== -->
+
+    <section
+      class="border-y
+             border-white/10
+             bg-[#080808]"
+    >
+
+      <div
+        class="section-container
+               py-10
+               md:py-12"
+      >
+
+        <!-- ENCABEZADO -->
+
+        <div class="mb-8
+                    text-center">
+
+          <p
+            class="font-heading
+                   text-[11px]
+                   md:text-xs
+                   tracking-[0.4em]
+                   uppercase
+                   text-red-500"
+          >
+            Integrantes
+          </p>
+
+          <h2
+            class="mt-3
+                   font-display
+                   text-4xl
+                   md:text-5xl
+                   uppercase
+                   text-white"
+          >
+            Formación
+          </h2>
+
+          <div
+            class="mx-auto
+                   mt-5
+                   h-px
+                   w-12
+                   bg-red-700"
+          ></div>
+
+        </div>
+
+
+        <!-- LISTADO -->
+
+        <div
+          class="max-w-4xl
+                 mx-auto
+                 divide-y
+                 divide-white/10"
+        >
+
+          {
+            integrantes.map((integrante) => (
+
+              <div
+                class="flex
+                       flex-col
+                       sm:flex-row
+                       sm:items-center
+                       sm:justify-between
+                       gap-2
+                       py-4"
+              >
+
+                <p
+                  class="font-heading
+                         text-lg
+                         md:text-xl
+                         tracking-[0.12em]
+                         uppercase
+                         text-white"
+                >
+                  {integrante.nombre}
+                </p>
+
+                <p
+                  class="font-heading
+                         text-sm
+                         tracking-[0.18em]
+                         uppercase
+                         text-gray-400"
+                >
+                  {integrante.rol}
+                </p>
+
+              </div>
+
+            ))
+          }
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FOTO FINAL
+    ====================================================== -->
+
+    <section
+      class="section-container
+             pt-10
+             pb-16
+             md:pt-12
+             md:py-20"
+    >
+
+      <div
+        class="relative
+               overflow-hidden"
+      >
+
+        <img
+          src="/images/bio-sesion-02.jpg"
+          alt="Nementia en sesión fotográfica"
+          width="1333"
+          height="2000"
+          loading="lazy"
+          class="w-full
+                 max-h-[760px]
+                 object-cover
+                 object-center"
+        />
+
+        <!-- Overlay leve -->
+        <div
+          class="absolute
+                 inset-0
+                 bg-black/10"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         PIE INTERNO DE LA SECCIÓN
+    ======================================================= -->
+
+    <footer
+      class="border-t
+             border-white/10
+             py-14"
+    >
+      <div
+        class="section-container
+               text-center"
+      >
+        <p
+          class="font-heading
+                 text-gray-400
+                 text-[10px]
+                 uppercase
+                 tracking-[0.3em]"
+        >
+          Nementia · Valparaíso, Chile
+        </p>
+      </div>
+    </footer>
+
   </main>
+
 </BaseLayout>

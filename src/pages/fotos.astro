@@ -1,34 +1,612 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const fotos = [
+  {
+    src: '/images/foto-01.jpg',
+    alt: 'Nementia en vivo - fotografía 01',
+    width: 1200,
+    height: 800,
+  },
+  {
+    src: '/images/foto-02.jpg',
+    alt: 'Nementia en vivo - fotografía 02',
+    width: 1333,
+    height: 2000,
+  },
+  {
+    src: '/images/foto-03.jpg',
+    alt: 'Nementia en vivo - fotografía 03',
+    width: 1920,
+    height: 1280,
+  },
+  {
+    src: '/images/foto-04.jpg',
+    alt: 'Nementia en vivo - fotografía 04',
+    width: 1200,
+    height: 1500,
+  },
+  {
+    src: '/images/foto-05.jpg',
+    alt: 'Nementia en vivo - fotografía 05',
+    width: 2000,
+    height: 1333,
+  },
+  {
+    src: '/images/foto-06.jpg',
+    alt: 'Nementia en vivo - fotografía 06',
+    width: 2000,
+    height: 1335,
+  },
+  {
+    src: '/images/foto-07.jpg',
+    alt: 'Nementia en vivo - fotografía 07',
+    width: 1335,
+    height: 2000,
+  },
+  {
+    src: '/images/foto-08.jpg',
+    alt: 'Nementia en vivo - fotografía 08',
+    width: 1200,
+    height: 800,
+  },
+  {
+    src: '/images/foto-09.jpg',
+    alt: 'Nementia en vivo - fotografía 09',
+    width: 1335,
+    height: 2000,
+  },
+  {
+    src: '/images/foto-10.jpg',
+    alt: 'Nementia en vivo - fotografía 10',
+    width: 1200,
+    height: 800,
+  },
+  {
+    src: '/images/foto-11.jpg',
+    alt: 'Nementia en vivo - fotografía 11',
+    width: 1200,
+    height: 1500,
+  },
+  {
+    src: '/images/foto-12.jpg',
+    alt: 'Nementia en vivo - fotografía 12',
+    width: 1200,
+    height: 800,
+  },
+  {
+    src: '/images/foto-13.jpg',
+    alt: 'Nementia en vivo - fotografía 13',
+    width: 2000,
+    height: 1335,
+  },
+  {
+    src: '/images/foto-14.jpg',
+    alt: 'Nementia en vivo - fotografía 14',
+    width: 1200,
+    height: 1500,
+  },
+  {
+    src: '/images/foto-15.jpg',
+    alt: 'Nementia en vivo - fotografía 15',
+    width: 2000,
+    height: 1335,
+  },
+];
 ---
 
 <BaseLayout
-  title="Música | Nementia"
-  description="Discografía oficial de Nementia."
+  title="Fotos | Nementia"
+  description="Galería fotográfica de Nementia."
 >
-  <main class="min-h-screen pt-32">
-    <section class="section-container py-20">
 
-      <p
-        class="font-heading
-               text-[var(--accent-red)]
-               text-xs
-               tracking-[0.4em]
-               uppercase
-               mb-4"
-      >
-        Nementia
-      </p>
+  <main id="main-content" class="bg-black min-h-screen">
 
-      <h1
-        class="font-display
-               text-5xl
-               md:text-6xl
-               uppercase"
+    <!-- ======================================================
+         BANNER
+    ====================================================== -->
+
+    <section
+      class="relative
+             overflow-hidden
+             bg-black"
+    >
+
+      <!-- Imagen de fondo -->
+
+      <div class="absolute inset-0">
+        <img
+          src="/images/banner6.jpg"
+          alt=""
+          class="h-full
+                 w-full
+                 object-cover
+                 object-[center_40%]"
+        />
+
+        <!-- Overlay general -->
+        <div
+          class="absolute
+                 inset-0
+                 bg-black/45"
+        ></div>
+
+        <!-- Degradado hacia contenido -->
+        <div
+          class="absolute
+                 inset-0
+                 bg-gradient-to-b
+                 from-black/10
+                 via-black/10
+                 to-black"
+        ></div>
+      </div>
+
+
+      <!-- Título -->
+
+      <div
+        class="section-container
+               relative
+               z-10
+               flex
+               min-h-[280px]
+               md:min-h-[340px]
+               items-center
+               justify-center
+               text-center"
       >
-        Música
-      </h1>
+
+        <div class="translate-y-12">
+
+          <p
+            class="font-heading
+                   text-[11px]
+                   md:text-xs
+                   tracking-[0.4em]
+                   uppercase
+                   text-red-500"
+          >
+            En vivo
+          </p>
+
+          <h1
+            class="mt-4
+                   font-display
+                   text-5xl
+                   md:text-6xl
+                   lg:text-7xl
+                   uppercase
+                   text-white"
+          >
+            Fotos
+          </h1>
+
+          <div
+            class="mx-auto
+                   mt-6
+                   h-px
+                   w-12
+                   bg-red-700"
+          ></div>
+
+        </div>
+
+      </div>
 
     </section>
+
+
+    <!-- ======================================================
+         GALERÍA
+    ====================================================== -->
+
+    <section
+      class="pb-20
+             md:pb-24"
+    >
+
+      <div class="section-container">
+
+        <!-- Encabezado -->
+
+        <div class="mb-8 md:mb-10">
+
+          <p
+            class="font-heading
+                   text-[11px]
+                   md:text-xs
+                   tracking-[0.4em]
+                   uppercase
+                   text-red-500"
+          >
+            Archivo
+          </p>
+
+          <h2
+            class="mt-3
+                   font-display
+                   text-4xl
+                   md:text-5xl
+                   uppercase
+                   text-white"
+          >
+            En vivo
+          </h2>
+
+          <div
+            class="mt-5
+                   h-px
+                   w-12
+                   bg-red-700"
+          ></div>
+
+        </div>
+
+
+        <!-- Galería masonry -->
+
+        <div
+          class="columns-1
+                 sm:columns-2
+                 lg:columns-3
+                 gap-5
+                 md:gap-6"
+        >
+
+          {
+            fotos.map((foto) => (
+              <button
+                type="button"
+                data-lightbox
+                data-src={foto.src}
+                data-alt={foto.alt}
+                class="group
+                       relative
+                       mb-5
+                       md:mb-6
+                       block
+                       w-full
+                       break-inside-avoid
+                       cursor-zoom-in
+                       overflow-hidden
+                       border
+                       border-white/10
+                       bg-[#0d0d0d]
+                       text-left"
+                aria-label={`Ampliar ${foto.alt}`}
+              >
+
+                <img
+                  src={foto.src}
+                  alt={foto.alt}
+                  width={foto.width}
+                  height={foto.height}
+                  loading="lazy"
+                  class="w-full
+                         h-auto
+                         transition-transform
+                         duration-700
+                         ease-out
+                         group-hover:scale-[1.025]"
+                />
+
+                <!-- Hover -->
+                <div
+                  class="pointer-events-none
+                         absolute
+                         inset-0
+                         bg-black/0
+                         transition-colors
+                         duration-500
+                         group-hover:bg-black/15"
+                ></div>
+
+              </button>
+            ))
+          }
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
+
+
+  <!-- ======================================================
+       LIGHTBOX
+  ====================================================== -->
+
+  <div
+    id="lightbox"
+    class="fixed
+          inset-0
+          z-[100]
+          hidden
+          items-center
+          justify-center
+          bg-black/95
+          p-4
+          md:p-8"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Fotografía ampliada"
+    aria-hidden="true"
+  >
+    <!-- Imagen ampliada -->
+
+    <img
+      id="lightbox-image"
+      alt=""
+      class="max-h-[90vh]
+            max-w-[92vw]
+            object-contain"
+    />
+
+
+    <!-- Cerrar -->
+
+    <button
+      id="lightbox-close"
+      type="button"
+      aria-label="Cerrar imagen"
+      class="absolute
+            right-5
+            top-5
+            md:right-8
+            md:top-8
+            flex
+            h-12
+            w-12
+            items-center
+            justify-center
+            border
+            border-white/20
+            bg-black/40
+            font-heading
+            text-2xl
+            text-white
+            transition-colors
+            duration-300
+            hover:border-white/60
+            hover:bg-white/10"
+    >
+      ×
+    </button>
+  </div>
+
+
+  <!-- ======================================================
+       LIGHTBOX SCRIPT
+  ====================================================== -->
+
+  <script>
+    const lightbox =
+      document.getElementById('lightbox');
+
+    const lightboxImage =
+      document.getElementById(
+        'lightbox-image'
+      ) as HTMLImageElement | null;
+
+    const closeButton =
+      document.getElementById(
+        'lightbox-close'
+      ) as HTMLButtonElement | null;
+
+    const openButtons =
+      document.querySelectorAll<HTMLButtonElement>(
+        '[data-lightbox]'
+      );
+
+
+    // Elemento que tenía el foco antes de abrir
+    // el lightbox.
+    let lastFocusedElement: HTMLElement | null = null;
+
+
+    function isLightboxOpen() {
+      return (
+        lightbox?.getAttribute('aria-hidden') === 'false'
+      );
+    }
+
+
+    function openLightbox(
+      src: string,
+      alt: string
+    ) {
+
+      if (
+        !lightbox ||
+        !lightboxImage ||
+        !closeButton
+      ) {
+        return;
+      }
+
+
+      // Guardar el elemento desde el cual se abrió.
+      if (
+        document.activeElement instanceof HTMLElement
+      ) {
+        lastFocusedElement =
+          document.activeElement;
+      }
+
+
+      // Cargar la imagen solamente al abrir.
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+
+
+      // Mostrar modal.
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+
+      lightbox.setAttribute(
+        'aria-hidden',
+        'false'
+      );
+
+
+      // Evitar scroll de la página de fondo.
+      document.body.style.overflow = 'hidden';
+
+
+      // Llevar el foco al botón de cierre.
+      requestAnimationFrame(() => {
+        closeButton.focus();
+      });
+    }
+
+
+    function closeLightbox() {
+
+      if (
+        !lightbox ||
+        !lightboxImage
+      ) {
+        return;
+      }
+
+
+      // Evita ejecutar el cierre si ya está cerrado.
+      if (!isLightboxOpen()) {
+        return;
+      }
+
+
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+
+      lightbox.setAttribute(
+        'aria-hidden',
+        'true'
+      );
+
+
+      // Retirar completamente la imagen para evitar
+      // src="".
+      lightboxImage.removeAttribute('src');
+      lightboxImage.alt = '';
+
+
+      document.body.style.overflow = '';
+
+
+      // Devolver el foco a la fotografía que abrió
+      // el lightbox.
+      lastFocusedElement?.focus();
+      lastFocusedElement = null;
+    }
+
+
+    // Abrir lightbox.
+    openButtons.forEach((button) => {
+
+      button.addEventListener(
+        'click',
+        () => {
+
+          const src =
+            button.getAttribute('data-src');
+
+          const alt =
+            button.getAttribute('data-alt') || '';
+
+          if (src) {
+            openLightbox(src, alt);
+          }
+
+        }
+      );
+
+    });
+
+
+    // Botón cerrar.
+    closeButton?.addEventListener(
+      'click',
+      closeLightbox
+    );
+
+
+    // Cerrar haciendo clic en el fondo.
+    lightbox?.addEventListener(
+      'click',
+      (event) => {
+
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+
+      }
+    );
+
+
+    // Control de teclado.
+    document.addEventListener(
+      'keydown',
+      (event) => {
+
+        if (!isLightboxOpen()) {
+          return;
+        }
+
+
+        // Escape cierra el lightbox.
+        if (event.key === 'Escape') {
+
+          event.preventDefault();
+
+          closeLightbox();
+
+          return;
+        }
+
+
+        // El único control interactivo dentro del
+        // lightbox es el botón de cierre.
+        // Evitamos que Tab salga hacia el contenido
+        // situado detrás del modal.
+        if (event.key === 'Tab') {
+
+          event.preventDefault();
+
+          closeButton?.focus();
+
+        }
+
+      }
+    );
+  </script>
+
+      <!-- ======================================================
+         PIE INTERNO DE LA SECCIÓN
+    ======================================================= -->
+
+    <footer
+      class="border-t
+             border-white/10
+             py-14"
+    >
+      <div
+        class="section-container
+               text-center"
+      >
+        <p
+          class="font-heading
+                 text-gray-400
+                 text-[10px]
+                 uppercase
+                 tracking-[0.3em]"
+        >
+          Nementia · Valparaíso, Chile
+        </p>
+      </div>
+    </footer>
+
 </BaseLayout>

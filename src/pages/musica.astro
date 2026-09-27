@@ -1,5 +1,35 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const releases = [
+  {
+    title: 'Vita Est In Morte',
+    format: 'LP',
+    year: '2025',
+    cover: '/images/vita-est-in-morte-cover.jpg',
+    spotify: 'https://open.spotify.com/intl-es/album/1qfnlwKBwmpsFhGxyT38Jw',
+    youtube: 'https://youtube.com/playlist?list=PLIp1zm5Fhx8wRk8Y-F3UobQFgJNwrgpz5&si=mUpreqn4tzIS57iG',
+    apple: 'https://music.apple.com/cl/artist/nementia/1712198198',
+  },
+  {
+    title: 'Dryas',
+    format: 'EP',
+    year: '2024',
+    cover: '/images/dryas.jpg',
+    spotify: '#',
+    youtube: 'https://www.youtube.com/watch?v=1jCuvD9GRwo',
+    apple: '#',
+  },
+  {
+    title: 'Nementia',
+    format: 'Single',
+    year: '2023',
+    cover: '/images/nementia-single.jpg',
+    spotify: '#',
+    youtube: 'https://www.youtube.com/watch?v=9pbT37zcUR8&list=RD9pbT37zcUR8&start_radio=1',
+    apple: '#',
+  },
+];
 ---
 
 <BaseLayout
@@ -7,233 +37,329 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Discografía y lanzamientos oficiales de Nementia."
 >
 
-  <!-- ======================================================
-       PÁGINA MÚSICA
-  ====================================================== -->
-
   <main
-    class="relative
-           z-[1]
+    id="main-content"
+    class="bg-black
            min-h-screen
-           bg-black
            pt-20"
   >
 
-    <!-- ====================================================
-         ENCABEZADO
-    ===================================================== -->
+    <!-- ======================================================
+     CABECERA / BANNER DISCOGRAFÍA
+======================================================= -->
 
-    <section
-      class="pt-24
-             pb-16"
-    >
+<section
+  class="relative
+         overflow-hidden
+         pt-16
+         md:pt-20
+         pb-12
+         md:pb-14"
+>
 
-      <div class="section-container">
+  <!-- ====================================================
+       IMAGEN DE FONDO
+  ===================================================== -->
 
-        <p
-          class="font-heading
-                 text-red-800
-                 text-xs
-                 tracking-[0.4em]
-                 uppercase
-                 mb-5"
-        >
-          Discografía
-        </p>
+  <div
+    class="absolute
+           inset-0
+           bg-cover
+           bg-center
+           md:bg-[position:center_45%]
+           scale-[1.02]"
+    style="
+      background-image:
+      url('/images/banner1.jpg');
+    "
+  ></div>
 
-        <h1
-          class="font-display
-                 text-white
-                 text-6xl
-                 md:text-7xl
-                 uppercase"
-        >
-          Música
-        </h1>
+
+  <!-- ====================================================
+       OVERLAYS
+  ===================================================== -->
+
+  <!-- Oscurecimiento general -->
+  <div
+    class="absolute
+           inset-0
+           bg-black/50"
+  ></div>
+
+  <!-- Gradiente superior e inferior -->
+  <div
+    class="absolute
+           inset-0
+           bg-gradient-to-b
+           from-black/55
+           via-black/20
+           to-black/85"
+  ></div>
+
+
+      <!-- ====================================================
+          CONTENIDO
+      ===================================================== -->
+
+      <div
+        class="relative
+              z-10
+              section-container"
+      >
 
         <div
-          class="w-12
-                 h-px
-                 bg-red-800
-                 mt-7"
-        ></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ====================================================
-         DISCOGRAFÍA
-    ===================================================== -->
-
-    <section
-      class="pb-24"
-    >
-
-      <div class="section-container">
-
-        <div
-         class="grid
-         grid-cols-1
-         sm:grid-cols-2
-         lg:grid-cols-3
-         gap-8
-         lg:gap-10
-         max-w-6xl
-         mx-auto"
+          class="max-w-3xl
+                mx-auto
+                text-center"
         >
 
-          <!-- ==============================================
-               VITA EST IN MORTE
-          =============================================== -->
+          <p
+            class="font-heading
+                  text-red-500
+                  text-[10px]
+                  md:text-xs
+                  tracking-[0.45em]
+                  uppercase
+                  mb-4"
+          >
+            Discografía
+          </p>
 
-          <article>
+          <h1
+            class="font-display
+                  text-white
+                  text-[2rem]
+                  sm:text-5xl
+                  md:text-6xl
+                  lg:text-7xl
+                  uppercase
+                  leading-[0.95]
+                  tracking-[0.01em]"
+          >
+            Lanzamientos
+          </h1>
 
-            <div
-              class="aspect-square
-                     overflow-hidden
-                     bg-zinc-900
-                     border
-                     border-white/10"
-            >
+          <p
+            class="mt-5
+                  text-sm
+                  md:text-base
+                  text-gray-400
+                  leading-relaxed
+                  max-w-xl
+                  mx-auto"
+          >
+          </p>
 
-              <img
-                src="/images/vita-est-in-morte-cover.jpg"
-                alt="Vita Est In Morte - Nementia"
-                class="w-full
-                       h-full
-                       object-cover"
-              />
-
-            </div>
-
-            <div class="pt-5">
-
-              <p
-                class="font-heading
-                       text-red-800
-                       text-[10px]
-                       tracking-[0.3em]
-                       uppercase"
-              >
-                LP · 2025
-              </p>
-
-              <h2
-                class="font-display
-                       text-white
-                       text-3xl
-                       mt-2"
-              >
-                Vita Est In Morte
-              </h2>
-
-            </div>
-
-          </article>
-
-
-          <!-- ==============================================
-               DRYAS
-          =============================================== -->
-
-          <article>
-
-            <div
-                class="aspect-square
-                    overflow-hidden
-                    bg-zinc-900
-                    border
-                    border-white/10"
-            >
-                <img
-                src="/images/dryas.jpg"
-                alt="Dryas - Nementia"
-                class="w-full
-                        h-full
-                        object-cover"
-                />
-            </div>
-
-            <div class="pt-5">
-
-                <p
-                class="font-heading
-                        text-gray-500
-                        text-[10px]
-                        tracking-[0.3em]
-                        uppercase"
-                >
-                EP · 2024
-                </p>
-
-                <h2
-                class="font-display
-                        text-white
-                        text-3xl
-                        mt-2"
-                >
-                Dryas
-                </h2>
-
-            </div>
-
-          </article>
-
-
-          <!-- ==============================================
-               NEMENTIA
-          =============================================== -->
-
-          <article>
-
-            <div
-                class="aspect-square
-                    overflow-hidden
-                    bg-zinc-900
-                    border
-                    border-white/10"
-            >
-                <img
-                src="/images/nementia-single.jpg"
-                alt="Nementia - Single"
-                class="w-full
-                        h-full
-                        object-cover"
-                />
-            </div>
-
-            <div class="pt-5">
-
-                <p
-                class="font-heading
-                        text-gray-500
-                        text-[10px]
-                        tracking-[0.3em]
-                        uppercase"
-                >
-                Single · 2023
-                </p>
-
-                <h2
-                class="font-display
-                        text-white
-                        text-3xl
-                        mt-2"
-                >
-                Nementia
-                </h2>
-
-            </div>
-
-          </article>
+          <div
+            class="w-12
+                  h-px
+                  bg-red-800
+                  mx-auto
+                  mt-6"
+          ></div>
 
         </div>
 
       </div>
 
     </section>
+
+
+    <!-- ======================================================
+         DISCOGRAFÍA
+    ======================================================= -->
+
+    <section
+      class="pb-20
+             md:pb-24"
+    >
+
+      <div class="section-container">
+
+        <div
+          class="grid
+                 grid-cols-1
+                 md:grid-cols-2
+                 xl:grid-cols-3
+                 gap-x-12
+                 gap-y-14
+                 max-w-6xl
+                 mx-auto"
+        >
+
+          {
+            releases.map((release) => (
+
+              <article
+                class="group"
+              >
+
+                <!-- ==========================================
+                     CARÁTULA
+                =========================================== -->
+
+                <a
+                  href={release.spotify}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                  aria-label={`Escuchar ${release.title}`}
+                >
+
+                  <div
+                    class="aspect-square
+                           overflow-hidden
+                           bg-zinc-900
+                           border
+                           border-white/10"
+                  >
+
+                    <img
+                      src={release.cover}
+                      alt={`${release.title} - Nementia`}
+                      loading="lazy"
+                      class="w-full
+                             h-full
+                             object-cover
+                             transition-transform
+                             duration-700
+                             group-hover:scale-[1.025]"
+                    />
+
+                  </div>
+
+                </a>
+
+
+                <!-- ==========================================
+                     INFORMACIÓN
+                =========================================== -->
+
+                <div class="pt-5">
+
+                  <!-- Tipo / año -->
+
+                  <p
+                    class:list={[
+                      'font-heading',
+                      'text-[10px]',
+                      'tracking-[0.35em]',
+                      'uppercase',
+                      'mb-3',
+                      'text-red-500',
+                    ]}
+                  >
+                    {release.format} · {release.year}
+                  </p>
+
+
+                  <!-- Título -->
+
+                  <h2
+                    class="font-heading
+                           text-white
+                           text-[28px]
+                           md:text-[30px]
+                           uppercase
+                           tracking-[0.07em]
+                           leading-none"
+                  >
+                    {release.title}
+                  </h2>
+
+
+                  <!-- Plataformas -->
+
+                  <div
+                    class="flex
+                           flex-wrap
+                           gap-x-5
+                           gap-y-2
+                           mt-5
+                           font-heading
+                           text-[10px]
+                           tracking-[0.22em]
+                           uppercase
+                           text-gray-400"
+                  >
+
+                    <a
+                      href={release.spotify}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:text-white
+                             transition-colors
+                             duration-300"
+                    >
+                      Spotify
+                    </a>
+
+                    <a
+                      href={release.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:text-white
+                             transition-colors
+                             duration-300"
+                    >
+                      YouTube
+                    </a>
+
+                    <a
+                      href={release.apple}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:text-white
+                             transition-colors
+                             duration-300"
+                    >
+                      Apple Music
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            ))
+          }
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         PIE INTERNO DE LA SECCIÓN
+    ======================================================= -->
+
+    <footer
+      class="border-t
+             border-white/10
+             py-14"
+    >
+
+      <div
+        class="section-container
+               text-center"
+      >
+
+        <p
+          class="font-heading
+                 text-gray-400
+                 text-[10px]
+                 uppercase
+                 tracking-[0.3em]"
+        >
+          Nementia · Valparaíso, Chile
+        </p>
+
+      </div>
+
+    </footer>
 
   </main>
 

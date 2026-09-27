@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Página no encontrada | Nementia"
+  description="La página que buscas no existe."
+>
+
+  <main
+    id="main-content"
+    class="relative
+           min-h-screen
+           bg-black
+           flex
+           items-center
+           justify-center
+           overflow-hidden"
+  >
+
+    <!-- ======================================================
+         FONDO
+    ====================================================== -->
+
+    <div
+      class="absolute
+             inset-0
+             overflow-hidden"
+    >
+      <img
+        src="/images/vita-est-in-morte-hero.jpg"
+        alt=""
+        class="h-full
+               w-full
+               object-cover
+               object-center
+               scale-[1.03]
+               blur-[3px]"
+      />
+    </div>
+
+    <!-- Overlay oscuro -->
+    <div
+      class="absolute
+             inset-0
+             bg-black/60"
+    ></div>
+
+    <!-- Gradiente adicional -->
+    <div
+      class="absolute
+             inset-0
+             bg-gradient-to-t
+             from-black/75
+             via-black/35
+             to-black/45"
+    ></div>
+
+
+    <!-- ======================================================
+         CONTENIDO
+    ====================================================== -->
+
+    <section
+      class="relative
+             z-10
+             section-container
+             text-center
+             py-24"
+    >
+
+      <p
+        class="font-heading
+               text-red-500
+               text-[11px]
+               tracking-[0.4em]
+               uppercase"
+      >
+        Error 404
+      </p>
+
+
+      <h1
+        class="mt-4
+               font-display
+               text-4xl
+               sm:text-5xl
+               md:text-6xl
+               lg:text-7xl
+               leading-[0.95]
+               uppercase
+               text-white"
+      >
+        Página no encontrada
+      </h1>
+
+
+      <div
+        class="mx-auto
+               mt-6
+               h-px
+               w-12
+               bg-red-700"
+      ></div>
+
+
+      <p
+        class="mt-8
+               mx-auto
+               max-w-xl
+               font-heading
+               text-sm
+               md:text-base
+               tracking-[0.05em]
+               text-gray-400"
+      >
+        La página que buscas no existe o fue movida.
+      </p>
+
+
+      <!-- ======================================================
+           BOTÓN
+      ====================================================== -->
+
+      <div
+        class="mt-10
+               flex
+               justify-center"
+      >
+
+        <a
+          href="/"
+          class="ghost-btn
+                 font-heading
+                 text-[10px]
+                 uppercase
+                 tracking-[0.25em]
+                 px-8
+                 py-4
+                 text-white"
+        >
+          Volver al inicio
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</BaseLayout>
