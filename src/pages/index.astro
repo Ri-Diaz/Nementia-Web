@@ -30,24 +30,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <!-- IMAGEN DE FONDO                           -->
       <!-- ========================================= -->
 
-      <img
-        src="/images/vita-est-in-morte-hero.jpg"
-        alt=""
-        width="2400"
-        height="1586"
-        loading="eager"
-        fetchpriority="high"
-        aria-hidden="true"
-        class="absolute
-              inset-0
-              h-full
-              w-full
-              object-cover
-              object-[52%_42%]
-              md:object-[58%_42%]
-              lg:object-[60%_42%]
-              scale-[1.06]"
-      />
+      <picture class="absolute inset-0">
+        <source
+          type="image/webp"
+          srcset="
+            /images/vita-est-in-morte-hero-768.webp 768w,
+            /images/vita-est-in-morte-hero-1280.webp 1280w,
+            /images/vita-est-in-morte-hero-1920.webp 1920w
+          "
+          sizes="100vw"
+        />
+        <img
+          src="/images/vita-est-in-morte-hero.jpg"
+          alt=""
+          width="2400"
+          height="1586"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          class="absolute inset-0 h-full w-full object-cover object-[52%_42%] md:object-[58%_42%] lg:object-[60%_42%] scale-[1.06]"
+        />
+      </picture>
 
 
       <!-- ========================================= -->
