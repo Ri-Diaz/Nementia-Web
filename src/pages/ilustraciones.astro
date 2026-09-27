@@ -6,41 +6,57 @@ const ilustraciones = [
     numero: 'I',
     titulo: 'Nementia',
     imagen: '/images/1-nementia.jpeg',
+    width: 1215,
+    height: 1215,
   },
   {
     numero: 'II',
     titulo: 'Dryas',
     imagen: '/images/2-dryas.jpeg',
+    width: 1800,
+    height: 1800,
   },
   {
     numero: 'III',
     titulo: 'Inerte',
     imagen: '/images/3-inerte.jpeg',
+    width: 1204,
+    height: 1204,
   },
   {
     numero: 'IV',
     titulo: 'Irreflejo',
     imagen: '/images/4-irreflejo.jpeg',
+    width: 1210,
+    height: 1210,
   },
   {
     numero: 'V',
     titulo: 'Paro',
     imagen: '/images/5-paro.jpg',
+    width: 1800,
+    height: 1800,
   },
   {
     numero: 'VI',
     titulo: 'Menguante',
     imagen: '/images/6-menguante.jpg',
+    width: 1800,
+    height: 1800,
   },
   {
     numero: 'VII',
     titulo: 'Nodus Tollens',
     imagen: '/images/7-nodus-tollens.jpeg',
+    width: 1210,
+    height: 1210,
   },
   {
     numero: 'VIII',
     titulo: 'Snag',
     imagen: '/images/8-snag.jpg',
+    width: 1800,
+    height: 1800,
   },
 ];
 ---
@@ -271,6 +287,8 @@ const ilustraciones = [
                     <img
                       src={obra.imagen}
                       alt={`${obra.numero} - ${obra.titulo}`}
+                      width={obra.width}
+                      height={obra.height}
                       loading="lazy"
                       class="w-full
                             aspect-square

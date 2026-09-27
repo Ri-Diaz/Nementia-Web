@@ -7,6 +7,8 @@ const releases = [
     format: 'LP',
     year: '2025',
     cover: '/images/vita-est-in-morte-cover.jpg',
+    width: 1600,
+    height: 1600,
     spotify: 'https://open.spotify.com/intl-es/album/1qfnlwKBwmpsFhGxyT38Jw',
     youtube: 'https://youtube.com/playlist?list=PLIp1zm5Fhx8wRk8Y-F3UobQFgJNwrgpz5&si=mUpreqn4tzIS57iG',
     apple: 'https://music.apple.com/cl/artist/nementia/1712198198',
@@ -16,6 +18,8 @@ const releases = [
     format: 'EP',
     year: '2024',
     cover: '/images/dryas.jpg',
+    width: 1600,
+    height: 1600,
     spotify: '#',
     youtube: 'https://www.youtube.com/watch?v=1jCuvD9GRwo',
     apple: '#',
@@ -25,6 +29,8 @@ const releases = [
     format: 'Single',
     year: '2023',
     cover: '/images/nementia-single.jpg',
+    width: 1527,
+    height: 1600,
     spotify: '#',
     youtube: 'https://www.youtube.com/watch?v=9pbT37zcUR8&list=RD9pbT37zcUR8&start_radio=1',
     apple: '#',
@@ -217,6 +223,8 @@ const releases = [
                     <img
                       src={release.cover}
                       alt={`${release.title} - Nementia`}
+                      width={release.width}
+                      height={release.height}
                       loading="lazy"
                       class="w-full
                              h-full
